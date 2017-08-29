@@ -1,5 +1,5 @@
 /**
- * Tout ce qui concerne les paramètres du comptes et les requêtes AJAX disponible.
+ * Contains all parameters related to accounts and AJAX requests
  */
 define([
 	"src/utils/Config",
@@ -24,12 +24,12 @@ function (
 
 
 	/*
-	 * Permet de ce connecter ou créer un compte.
-	 * @name Nom de compte
-	 * @password Mot de passe du compte
-	 * Return "created" - Compte créer
-	 *		  "connected" - Connexion réussi
-	 *		  "wrongpassword" - Mot de passe incorrect ou compte déjà existant
+	 * Allows for connecting to/creation of accounts
+	 * @name Account name
+	 * @password Account password
+	 * Return "created" - Account created
+	 *		  "connected" - Connection was successful
+	 *		  "wrongpassword" - Incorrect password or account already exists
 	 */
 	Account.prototype.connect = function (name, password) {
 		this.name = name;
@@ -57,7 +57,7 @@ function (
 
 
 	/**
-	 * Refresh la progression du joueurs. (Niveau débloqué, score par niveau)
+	 * Updates player progression (Level unlocked, score per level)
 	 */
 	Account.prototype.refreshProgress = function () {
 		var result;
@@ -99,9 +99,9 @@ function (
 
 
 	/*
-	 * Permet d'ajouter un score à la database.
-	 * @level Niveau auquel correspond le score
-	 * @score Score à ajouter
+	 * Adds a score to the database
+	 * @level Level corresponding to the score
+	 * @score Score to be added
 	 */
 	Account.prototype.addScore = function (level, score) {
 		$.post(ServerConfig.host + "request.php", {
@@ -119,8 +119,7 @@ function (
 
 
 	/*
-	 * Récupère le score total du joueur.
-	 * Return Score du joueur.
+	 * Fetches and returns the player's total score
 	 */
 	Account.prototype.getScore = function () {
 		var result;
@@ -137,8 +136,8 @@ function (
 
 
 	/*
-	 * Récupère le top 10 des joueurs.
-	 * Return Objet du top 10
+	 * Fetches a list of the top 10 players
+	 * Return the list as an object
 	 */
 	Account.prototype.getBestScore = function () {
 		var result;
@@ -155,7 +154,7 @@ function (
 
 
 	/**
-	 * Met à jours la variable highScore et playerScore
+	 * Updates the highScore and playerScore variables
 	 */
 	Account.prototype.refreshScore = function () {
 		this.getBestScore();

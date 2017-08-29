@@ -1,5 +1,5 @@
 /**
- * Class qui permet de récuperer les phrases en fonction de la langue.
+ * Class that fetches text corresponding to the selected language
  */
 define([
 	"src/utils/Config",
@@ -29,7 +29,7 @@ function (
 
 
 	/**
-	 * Récupère une phrase en fonction de la langue
+	 * Fetches a phrase corresponding to the language
 	 */
 	txt.prototype.get = function (labelName) {
 		return $(this.xliffData[Config.language]).find("#" + labelName + " target").html();

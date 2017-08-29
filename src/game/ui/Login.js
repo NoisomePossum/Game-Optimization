@@ -1,5 +1,5 @@
 /**
- * Ecran de Login
+ * Login screen
  */
 define([
 	"src/utils/assetsmanager/SpriteManager",
@@ -19,7 +19,7 @@ function (
 
 
 	/**
-	 * Affiche le contenu dans gameContainer
+	 * Displays the content in gameContainer
 	 */
 	Login.prototype.init = function (UIManager) {
 		SoundManager.play("nyan_elevator", true);
