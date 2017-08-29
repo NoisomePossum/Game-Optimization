@@ -5,14 +5,14 @@ function (
 	Config
 ) {
 	/**
-	 * Configuration du jeu.
+	 * Game configuration
 	 */
 	var Config = function () {
 		/**
-		 * Information du jeu
+		 * Information about the game
 		 */
 		this.version = "1.0.0";
-		this.local = true; // Si les requête se font en local ou vers le serveur web.
+		this.local = true; // Determines if requests are sent locally or to a web server
 		this.language = "en";
 		this.availableLanguage = [
 			"de",
@@ -24,52 +24,54 @@ function (
 		];
 
 		// var localhost = 'http://localhost/sokoban/localization/';
-		var localhost = 'https://fbgame.isartdigital.com/sokoban/sokoban26/bin/localization/';
+		// var localhost = 'https://fbgame.isartdigital.com/sokoban/sokoban26/bin/localization/';
+		var localhost = 'http://localhost/~possum/sokoban/';
 		var webhost = 'http://sokonyan.delfisakura.com/bin/localization/';
-		this.xliffPath = this.local ? localhost : webhost; // Chemin vers les fichiers de langues xliff
+		// this.xliffPath = this.local ? localhost : webhost; // Chemin vers les fichiers de langues xliff
+		this.xliffPath = 'http://localhost/~possum/sokoban/bin/localization/'; // Chemin vers les fichiers de langues xliff
 
 		/**
-		 * Reglage écran
+		 * Screen configuration
 		 */
 		this.fullScreen = false;
 		this.ratio = 16 / 9;
-		this.WINDOW_WIDTH = 1136; // Si fullScreen = false
+		this.WINDOW_WIDTH = 1136; // If fullScreen = false
 		this.WINDOW_HEIGHT = 640; // *
 		this.SAFE_ZONE_WIDTH = 2048;
 		this.SAFE_ZONE_HEIGHT = 1366;
 
 		/*
-		 * Outils de debug
+		 * Debug tools
 		 */
-		this.debug = true; // Active/Desactive les log dans la console
-		this.guiDebug = true; // Active/Desactive la gui de debugging
-		this.fps = false; // Active/Desactive le compteur de fps
-		this.ms = false; // Active/Desactive le compteur de ms par frame
-		this.showHitbox = false; // Active/Desactive l'affichage des hitbox
-		this.showPivot = false; // Active/Desactive l'affichage des points de pivots
+		this.debug = true; // Activates/Deactivates the console log
+		this.guiDebug = true; // Activates/Deactivates the debug gui
+		this.fps = false; // Activates/Deactivates the fps counter
+		this.ms = false; // Activates/Deactivates the ms per frame counter
+		this.showHitbox = false; // Activates/Deactivates hitbox display
+		this.showPivot = false; // Activates/Deactivates pivot point display
 
 
 		/**
-		 * Jeu
+		 * Game
 		 */
 
-		// Nombre de niveau au total
+		// Total number of levels
 		this.totalLevel = 15;
 
-		// Taille de la map
+		// Map size
 		this.mapSizeX = 11;
 		this.mapSizeY = 11;
 		this.mapWidth = 61;
 		this.mapHeight = 61;
 
-		// Effet chargement de la map
+		// Map loading effect
 		this.fadeInMin = 0;
 		this.fadeInMax = 400;
 
 		// UI Manager
-		this.changeScreenFadeDelay = 500; // Temps de transition entre 2 screen
+		this.changeScreenFadeDelay = 500; // Transition time between 2 screens
 
-		// Vitesse de translation d'une case à une autre
+		// Speed of movement from one square to another
 		this.translationSpeed = 15;
 	}
 
