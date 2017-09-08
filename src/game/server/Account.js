@@ -35,21 +35,38 @@ function (
 		this.name = name;
 		this.password = password;
 
-		$.post(ServerConfig.host + "request.php", {
+		$.post(ServerConfig.host + "src/game/server/php/request.php", {
 			name: this.name,
 			password: this.password,
 			isRequest: false
 		}, function (data) {
+            console.log(data);
 			var screenList = {
 				created: "AccountCreated",
 				connected: "GoodPassword",
 				wrongpassword: "WrongPassword"
 			}
 			
+            console.log("this is the data before transformation" + data);
 			data = data.replace(/ /g,"");
+            console.log(data);
 			data = data.replace(/\n/g,"");
+            console.log(data);
+            console.log(screenList[data]);
 
-			this.UIManager.addScreen(screenList[data], true);
+            var nextScreen;
+            if(data.includes("connected")){
+                nextScreen = "GoodPassword";
+            };
+            if (data.includes("created")) {
+                nextScreen = "AccountCreated";
+            };
+            if (data.includes("wrongpassword")) {
+                nextScreen = "WrongPassword";
+            };
+            console.log("next screen is: " + nextScreen);
+
+			this.UIManager.addScreen(nextScreen, true);
 			this.refreshProgress();
 			this.refreshScore();
 		}.bind(this));
@@ -61,7 +78,7 @@ function (
 	 */
 	Account.prototype.refreshProgress = function () {
 		var result;
-		$.post(ServerConfig.host + "request.php", {
+		$.post(ServerConfig.host + "src/game/server/php/request.php", {
 			name: this.name,
 			password: this.password,
 			request: "getProgress",
@@ -104,7 +121,7 @@ function (
 	 * @score Score to be added
 	 */
 	Account.prototype.addScore = function (level, score) {
-		$.post(ServerConfig.host + "request.php", {
+		$.post(ServerConfig.host + "src/game/server/php/request.php", {
 			name: this.name,
 			password: this.password,
             request: "sendScore",
@@ -123,7 +140,7 @@ function (
 	 */
 	Account.prototype.getScore = function () {
 		var result;
-		$.post(ServerConfig.host + "request.php", {
+		$.post(ServerConfig.host + "src/game/server/php/request.php", {
 			name: this.name,
 			password: this.password,
 			request: "getBestScore",
@@ -141,7 +158,7 @@ function (
 	 */
 	Account.prototype.getBestScore = function () {
 		var result;
-		$.post(ServerConfig.host + "request.php", {
+		$.post(ServerConfig.host + "src/game/server/php/request.php", {
 			name: this.name,
 			password: this.password,
 			request: "getBestScore",

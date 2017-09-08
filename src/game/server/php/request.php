@@ -1,6 +1,6 @@
 <?php
-// http://localhost/sokoban/request.php?isRequest=true&name=Teddyyu&password=1234569&request=trucmuche
-// SELECT * FROM `users` JOIN `score` ON `users`.`name` = `score`.`playerName`	
+/* http://localhost/~possum/sokoban/request.php?isRequest=true&name=Teddyyu&password=1234569&request=trucmuche */
+/* SELECT * FROM `users` JOIN `score` ON `users`.`name` = `score`.`playerName` */	
 error_reporting(E_ALL);
 include("account.php");
 

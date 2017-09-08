@@ -1,5 +1,5 @@
 <?php
-// http://localhost/sokoban/request.php?isRequest=false&name=Teddyyu&password=1234569
+/* http://localhost/~possum/sokoban/request.php?isRequest=false&name=Teddyyu&password=1234569 */
 error_reporting(E_ALL);
 include("config.php");
 
