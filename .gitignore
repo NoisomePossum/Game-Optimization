@@ -1,2 +1,3 @@
 #ignore Vim swap files
 *.swp
+node_modules
