@@ -1,3 +1,7 @@
 #ignore Vim swap files
 *.swp
+
 node_modules
+
+#ignore old version of jquery
+libs/jquery/OLD_jquery.min.js

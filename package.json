@@ -1,0 +1,12 @@
+{
+  "name": "Game-Optimization",
+  "description": "School project to test optimization of example game",
+  "version": "0.2.0",
+  "private": false,
+  "scripts": {
+    "test": "intern-client config=tests/intern"
+  },
+  "devDependencies": {
+    "intern": "~3.4.2"
+  }
+}
