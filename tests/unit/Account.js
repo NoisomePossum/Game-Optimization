@@ -1,6 +1,7 @@
 define(function (require) {
     var registerSuite = require('intern!object');
     var assert = require('intern/chai!assert');
+    var jquery = require('libs/jquery/jquery.min.js');
     var account = require('src/game/server/Account');
 
     registerSuite({
@@ -9,6 +10,12 @@ define(function (require) {
         squareSomething: function() {
             assert.strictEqual(account.squareSomething(2), 4,
                 'account.squareSomething should return the square root of the number passed as argument');
+        },
+
+        connect: function() {
+            assert.strictEqual(account.connect("new", "pass"), "connected",
+                'account.connect should return connected when player uses correct login name and password');
         }
+
     });
 });

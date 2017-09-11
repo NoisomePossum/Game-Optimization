@@ -1,5 +1,5 @@
 /**
- * Fonction pour le deplacement du joueur
+ * Function to move the player  
  */
 define([
 ],
@@ -11,23 +11,23 @@ function (
 
 
 	/**
-	 * Update la position de l'objet
-	 * @this Objet dont la position doit être updaté
-	 * @Config Ref vers Config
-	 * @MapManager Ref vers MapManager
+	 * Updates the position of the object
+	 * @this Objet whose position should be updated
+	 * @Config Ref to Config
+	 * @MapManager Ref to MapManager
 	 */
 	Move.prototype.addPositionUpdate = function (Object, Config, MapManager) {
 
 		/**
-		 * Update la position du joueur graphiquement en foncton de sa position
+		 * Graphically updates the player's position based on where it is currently
 		 */
 		Object.prototype.positionUpdate = function () {
-			// Change son image si il ce deplace ou non.
+			// Changes the player sprite even if the player doesn't change position
 			if (Math.abs(this.translateOffset.x) + Math.abs(this.translateOffset.y) == 0) {
 				$("#" + this.name).css("background-image", "url(" + this.idleSprite + ")");
 			}
 
-			// Update position par rapport au vecteur de position
+			// Updates position according to vector position
 			if (MapManager.currentMap.length > 0) {
 				$("#" + this.name).fadeIn( Config.fadeInMin + Math.random() * (Config.fadeInMax - Config.fadeInMin) );
 				$("#" + this.name).css("left", this.xOffset + this.translateOffset.x + Config.mapWidth * this.position.x)
@@ -38,10 +38,10 @@ function (
 		}
 
 		/**
-		 * Permet de faire une translation d'une case à l'autre pour un deplacement fluide
+		 * Moves the player from one square to another while keeping fluid animation
 		 */
 		Object.prototype.fluidMovementUpdate = function () {
-			// Update translation pour les mouvement fluide
+			// Update translation for fluid movement
 			if (Math.abs(this.translateOffset.x) > Config.translationSpeed + 1) {
 				this.translateOffset.x += Config.translationSpeed * this.translateOffset.x / Math.abs(this.translateOffset.x) * -1;
 			} else {
