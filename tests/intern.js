@@ -32,6 +32,11 @@ define({
 	// See <https://theintern.github.io/intern/#option-tunnel> for built-in options
 	tunnel: 'BrowserStackTunnel',
 
+    // Change default loader to requirejs
+    // loaders:{
+    //     'host-node': 'requirejs',
+    //     'host-browser': 'libs/requirejs/require.js'
+    // },
 	// Configuration options for the module loader; any AMD configuration options supported by the AMD loader in use
 	// can be used here.
 	// If you want to use a different loader than the default loader, see
@@ -43,9 +48,9 @@ define({
 
 	// Unit test suite(s) to run in each browser
 	suites: [
-        'tests/unit/Account',
-        'tests/unit/Move',
-        'tests/unit/Pathfinding'
+        'tests/unit/Account'
+        // 'tests/unit/Move'
+        // 'tests/unit/Pathfinding'
     ],
 
 	// Functional test suite(s) to execute against each browser once unit tests are completed

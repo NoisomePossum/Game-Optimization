@@ -1,7 +1,7 @@
 define(function (require) {
     var registerSuite = require('intern!object');
     var assert = require('intern/chai!assert');
-    var jquery = require('libs/jquery/jquery.min.js');
+    var $ = require('libs/jquery/jquery.min.js');
     var account = require('src/game/server/Account');
 
     registerSuite({
