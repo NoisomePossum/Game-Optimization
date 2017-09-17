@@ -4,7 +4,7 @@
   "version": "0.2.0",
   "private": false,
   "scripts": {
-    "test": "intern-client config=tests/intern"
+    "test": "intern-runner config=tests/intern"
   },
   "devDependencies": {
     "intern": "~3.4.2"
