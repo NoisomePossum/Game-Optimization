@@ -1,4 +1,4 @@
 language: node_js
 node_js:
   - '6.5.0'
-script: npm install && npm test
+script: npm install && libs/chromedriver --port=4444 --url-base=wd/hub && npm test
