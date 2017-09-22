@@ -1,4 +1,12 @@
 language: node_js
 node_js:
   - '6.5.0'
-script: npm install && libs/chromedriver --port=4444 --url-base=wd/hub && npm test
+addons:
+    apt:
+        sources:
+            -google-chrome
+        packages:
+            -google-chrome-stable
+before_script:
+    -sh -e /etc/init.d/xvfb start
+script: npm install && npm test
