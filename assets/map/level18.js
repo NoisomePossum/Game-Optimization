@@ -1,0 +1,43 @@
+define([
+],
+    function()
+{
+    return { "height":11,
+        "layers":[
+            {
+                "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 14, 14, 14, 14, 14, 14, 14, 18, 0, 0, 15, 8, 1, 1, 21, 1, 1, 8, 16, 0, 0, 15, 22, 1, 1, 1, 21, 1, 1, 16, 0, 0, 15, 1, 12, 13, 11, 1, 1, 1, 16, 0, 0, 15, 1, 16, 26, 15, 1, 1, 1, 16, 0, 0, 15, 1, 16, 17, 9, 1, 1, 1, 16, 0, 0, 15, 1, 16, 15, 1, 1, 1, 1, 16, 0, 0, 15, 23, 16, 15, 1, 1, 1, 1, 16, 0, 0, 19, 13, 20, 19, 13, 13, 13, 13, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                "height":11,
+                "name":"Tile Layer 1",
+                "opacity":1,
+                "type":"tilelayer",
+                "visible":true,
+                "width":11,
+                "x":0,
+                "y":0
+            }],
+        "nextobjectid":1,
+        "orientation":"orthogonal",
+        "properties":
+        {
+            "eatPower":0,
+            "par":20
+        },
+        "propertytypes":
+        {
+            "eatPower":"int",
+            "par":"int"
+        },
+        "renderorder":"right-down",
+        "tiledversion":"1.0.3",
+        "tileheight":100,
+        "tilesets":[
+            {
+                "firstgid":1,
+                "source":"newTileSet.tsx"
+            }],
+        "tilewidth":100,
+        "type":"map",
+        "version":1,
+        "width":11
+    };
+});

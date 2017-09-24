@@ -56,7 +56,7 @@ function (
 		 */
 
 		// Total number of levels
-		this.totalLevel = 15;
+		this.totalLevel = 18;
 
 		// Map size
 		this.mapSizeX = 11;

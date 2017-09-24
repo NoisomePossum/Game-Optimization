@@ -27,7 +27,10 @@ define([
 	"assets/map/level12",
 	"assets/map/level13",
 	"assets/map/level14",
-	"assets/map/level15"
+	"assets/map/level15",
+    "assets/map/level16",
+    "assets/map/level17",
+    "assets/map/level18"
 ],
 function (
 	$,
@@ -55,7 +58,10 @@ function (
 	level12,
 	level13,
 	level14,
-	level15
+	level15,
+	level16,
+	level17,
+	level18
 ) {
 	var MapManager = function () {
 		this.currentMap = [];
@@ -144,8 +150,9 @@ function (
 				Account.addScore(this.levelNum, score);
 				
 				//alert("Bravo, tu as gagné.\nTon nombre d'action :" + this.actionCount + "\nLe par du niveau :" + this.levelPar + "\nTon score : " + score + "\nDev tip: Message temporaire");
-				if (this.levelNum + 1 == 16) {
-				//	alert("Bravo, tu as fini le jeu");
+				if (this.levelNum + 1 == 19) {
+                    //	TODO: add a popup window like the ones for login confirmation
+					// alert("Bravo, tu as fini le jeu");
 					
 				} else {
 					this.removeMap('level' + (this.levelNum + 1));
@@ -163,7 +170,7 @@ function (
 		this.currentMap = [];
 		this.actionCount = 0; // Nombre d'action effectué par le joueur (deplacement, undo, redo)
 		this.levelNum = parseInt(name.substr(name.length - 2, 2));
-		if (isNaN(this.levelNum)) this.levelNum = parseInt(name.substr(name.length - 1, 1)); // To do, cleaner ça, hack fait 1 j avant le rendu
+		if (isNaN(this.levelNum)) this.levelNum = parseInt(name.substr(name.length - 1, 1)); // TODO, cleaner ça, hack fait 1 j avant le rendu
 		this.levelStartDate = Date.now();
 		
 		this.musicList = [
