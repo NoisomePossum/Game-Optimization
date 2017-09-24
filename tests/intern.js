@@ -63,7 +63,10 @@ define({
 
 	// Functional test suite(s) to execute against each browser once unit tests are completed
 	functionalSuites: [
-       'tests/functional/MainMenu'
+       // 'tests/functional/MainMenu',
+       // 'tests/functional/LoginFail',
+       'tests/functional/LevelSelect',
+       // 'tests/functional/GamePlay'
     ],
 
 	// A regular expression matching URLs to files that should not be included in code coverage analysis. Set to `true`

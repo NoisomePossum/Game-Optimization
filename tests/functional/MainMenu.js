@@ -8,7 +8,7 @@ define(function (require) {
         'Player can login': function () {
             return this.remote
             .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(15000)
+            .setFindTimeout(5000)
 
             .findById('nameField')
             .click()
@@ -38,7 +38,7 @@ define(function (require) {
         'About menu opens': function() {
             return this.remote
 
-            .setFindTimeout(15000)
+            .setFindTimeout(5000)
             .findById('AboutBtn')
             .click()
             .end()
@@ -58,7 +58,7 @@ define(function (require) {
         'Help menu opens': function() {
             return this.remote
 
-            .setFindTimeout(15000)
+            .setFindTimeout(5000)
             .findById('HelpBtn')
             .click()
             .end()
@@ -78,7 +78,7 @@ define(function (require) {
         'Options menu opens': function() {
             return this.remote
 
-            .setFindTimeout(15000)
+            .setFindTimeout(5000)
             .findById('OptionsBtn')
             .click()
             .end()
@@ -189,7 +189,7 @@ define(function (require) {
             .waitForDeletedById('Options')
             .end()
 
-            .setFindTimeout(15000)
+            .setFindTimeout(5000)
             .findById('HighScoreBtn')
             .click()
             .end()
