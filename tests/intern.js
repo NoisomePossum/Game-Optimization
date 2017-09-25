@@ -63,8 +63,8 @@ define({
 
 	// Functional test suite(s) to execute against each browser once unit tests are completed
 	functionalSuites: [
-       // 'tests/functional/MainMenu',
-       // 'tests/functional/LoginFail',
+       'tests/functional/MainMenu',
+       'tests/functional/LoginFail',
        'tests/functional/LevelSelect',
        // 'tests/functional/GamePlay'
     ],

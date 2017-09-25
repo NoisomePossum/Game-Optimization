@@ -1,6 +1,7 @@
 define(function (require) {
     var registerSuite = require('intern!object');
     var assert = require('intern/chai!assert');
+    var keys = require('intern/dojo/node!leadfoot/keys');
 
     registerSuite({
         name: 'Gameplay',
@@ -26,29 +27,45 @@ define(function (require) {
             .waitForDeletedById('GoodPassword')
             .end()
 
-            .setFindTimeout(5000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('btnLevel1')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .setFindTimeout(5000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
-                console.log(element);
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
-            .findById('MenuBtn')
-            .click()
             .end()
             ;
         },
 
+        'Level 1 successfully clears': function() {
+            return this.remote
+            .sleep(1000)
+            // .findById('mapContainer')
+            .pressKeys(keys.ARROW_RIGHT)
+            .sleep(100)
+            .pressKeys(keys.ARROW_RIGHT)
+            // .pressKeys(keys.ARROW_RIGHT)
+            // .pressKeys(keys.ARROW_DOWN)
+            // .pressKeys(keys.ARROW_DOWN)
+            // .pressKeys(keys.ARROW_UP)
+            // .pressKeys(keys.ARROW_UP)
+            // .pressKeys(keys.ARROW_RIGHT)
+            // .pressKeys(keys.ARROW_RIGHT)
+            .end()
+            .sleep(1000)
+            .findById('hudActionNumberText')
+            .getVisibleText()
+            .then(function(text){
+                assert.strictEqual(text, '0', 
+                    'Actions should be 0 when the next map is loaded');
+            })
+        },
 
     });
 });

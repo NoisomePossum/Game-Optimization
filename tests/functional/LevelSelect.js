@@ -33,12 +33,10 @@ define(function (require) {
 
             .setFindTimeout(5000)
             .findById('btnLevel18')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -50,38 +48,17 @@ define(function (require) {
 
         'Level 17 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel17')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -93,38 +70,17 @@ define(function (require) {
 
         'Level 16 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel16')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -136,38 +92,17 @@ define(function (require) {
 
         'Level 15 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel15')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -179,38 +114,17 @@ define(function (require) {
 
         'Level 14 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel14')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -222,38 +136,17 @@ define(function (require) {
 
         'Level 13 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel13')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -265,38 +158,17 @@ define(function (require) {
 
         'Level 12 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel12')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -308,38 +180,17 @@ define(function (require) {
 
         'Level 11 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel11')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -351,38 +202,17 @@ define(function (require) {
 
         'Level 10 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel10')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -394,38 +224,17 @@ define(function (require) {
 
         'Level 9 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel9')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -437,38 +246,17 @@ define(function (require) {
 
         'Level 8 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel8')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -480,38 +268,17 @@ define(function (require) {
 
         'Level 7 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel7')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -522,38 +289,17 @@ define(function (require) {
         },
         'Level 6 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel6')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -565,38 +311,17 @@ define(function (require) {
 
         'Level 5 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel5')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -608,38 +333,17 @@ define(function (require) {
 
         'Level 4 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel4')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -651,38 +355,17 @@ define(function (require) {
 
         'Level 3 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel3')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
@@ -694,43 +377,41 @@ define(function (require) {
 
         'Level 2 loads from level select screen': function () {
             return this.remote
-            .get(require.toUrl('http://localhost/~possum/sokoban/index.html'))
-            .setFindTimeout(5000)
-            .findById('nameField')
-            .click()
-            .type('new')
-            .end()
-            .findById('passField')
-            .click()
-            .type('pass')
-            .end()
-            .findByCssSelector('.buttonConnection')
-            .click()
-            .end()
-
-            .findByCssSelector('.buttonClose')
-            .click()
-            .waitForDeletedById('GoodPassword')
-            .end()
-
-            .setFindTimeout(5000)
+            .sleep(1000)
             .findById('LevelSelectBtn')
             .click()
             .end()
 
             .setFindTimeout(5000)
             .findById('btnLevel2')
-            // .findByCssSelector('.ui-effects-wrapper')
             .click()
             .end()
-            .sleep(3000)
+            .sleep(1000)
             .findById('GameStage')
-            // .getVisibleText()
             .then(function (element) {
                 assert.isNotNull(element, 'GameStage div should appear with content in it');
             })
             .findById('MenuBtn')
             .click()
+            .end()
+            ;
+        },
+
+        'Level 1 loads from level select screen': function () {
+            return this.remote
+            .sleep(1000)
+            .findById('LevelSelectBtn')
+            .click()
+            .end()
+
+            .sleep(1000)
+            .findById('btnLevel1')
+            .click()
+            .end()
+            .findById('GameStage')
+            .then(function (element) {
+                assert.isNotNull(element, 'GameStage div should appear with content in it');
+            })
             .end()
             ;
         }

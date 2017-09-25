@@ -94,7 +94,7 @@ define(function (require) {
         'French language option loads properly': function() {
                 return this.remote
 
-                .setFindTimeout(5000)
+                .sleep(500)
                 .findById('frenchFlag')
                 .click()
                 .end()
