@@ -178,11 +178,5 @@ function (
 		this.getScore();
 	}
 
-    //TODO remove this function - for test purposes only
-    Account.prototype.squareSomething = function(x) {
-        var result = x * x;
-        return result;
-    }
-
 	return new Account();
 });
