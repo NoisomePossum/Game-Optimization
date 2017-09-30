@@ -40,19 +40,14 @@ function (
 			password: this.password,
 			isRequest: false
 		}, function (data) {
-            console.log(data);
 			var screenList = {
 				created: "AccountCreated",
 				connected: "GoodPassword",
 				wrongpassword: "WrongPassword"
 			}
 			
-            console.log("this is the data before transformation" + data);
 			data = data.replace(/ /g,"");
-            console.log(data);
 			data = data.replace(/\n/g,"");
-            console.log(data);
-            console.log(screenList[data]);
 
             var nextScreen;
             if(data.includes("connected")){
@@ -64,7 +59,6 @@ function (
             if (data.includes("wrongpassword")) {
                 nextScreen = "WrongPassword";
             };
-            console.log("next screen is: " + nextScreen);
 
 			this.UIManager.addScreen(nextScreen, true);
 			this.refreshProgress();
