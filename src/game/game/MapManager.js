@@ -97,7 +97,9 @@ function (
 			box: 21,
 			boxOnGoal: 22,
 			player: 23,
-			playerOnGoal: 24
+			playerOnGoal: 24,
+            enemy: 25,
+            enemyOnGoal: 26
 		}
 
 		this.floorColor = [
@@ -111,11 +113,11 @@ function (
 	}
 
 
-	MapManager.prototype.init = function (Player) {
+	MapManager.prototype.init = function (Player, Enemy) {
 		this.Player = Player;
+        this.Enemy = Enemy;
 		Undoredo.add(MapManager);
 	}
-
 
 	MapManager.prototype.update = function () {
 		$("#hudTimeText").text(Math.floor((Date.now() - this.levelStartDate) / 1000) + " s");
@@ -207,6 +209,7 @@ function (
 		this.levelPar = map.properties.par;
 		$("#hudParNumberText").text(this.levelPar);
 		this.Player.eatPower = map.properties.eatPower || 0;
+        // this.Enemy.eatPower = 1;
 		
 		for (var i = 0; i < map.layers[0].data.length; i++) {
 
@@ -249,12 +252,26 @@ function (
 				case this.cell.player:
 					imageName = floorImageName;
 					break;
+                case this.cell.enemy:
+                    imageName = floorImageName;
+                    break;
+                case this.cell.enemyOnGoal:
+                    imageName = "goal";
+                    break;
 			}
 			
 			if (map.layers[0].data[i] == this.cell.playerOnGoal ||
 				map.layers[0].data[i] == this.cell.player) {
 				$("#mapContainer").append("<div id='player'></div>")
 					$("#player").css("background-image", "url(" + SpriteManager.get("player").src + ")")
+								.css("width", 141 * Math.max(Config.mapWidth, Config.mapHeight) / 110)
+								.css("height", 87 * Math.max(Config.mapWidth, Config.mapHeight) / 110);
+			}
+
+			if (map.layers[0].data[i] == this.cell.enemyOnGoal ||
+				map.layers[0].data[i] == this.cell.enemy) {
+				$("#mapContainer").append("<div id='enemy'></div>")
+					$("#enemy").css("background-image", "url(" + SpriteManager.get("enemy").src + ")")
 								.css("width", 141 * Math.max(Config.mapWidth, Config.mapHeight) / 110)
 								.css("height", 87 * Math.max(Config.mapWidth, Config.mapHeight) / 110);
 			}

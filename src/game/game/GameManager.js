@@ -14,6 +14,7 @@ define([
 	"src/game/controller/Keyboard",
 	"src/game/controller/GamePad",
 	"src/game/game/Player",
+	"src/game/game/Enemy",
 	"src/game/ui/UIManager",
 	"src/game/game/MapManager",
 	"src/game/game/box/BoxManager",
@@ -33,6 +34,7 @@ function (
 	Keyboard,
 	GamePad,
 	Player,
+    Enemy,
 	UIManager,
 	MapManager,
 	BoxManager,
@@ -59,8 +61,9 @@ function (
 		Time.init();
 		UIManager.addScreen("LoadScreen");
 		Player.init();
+		Enemy.init();
 		Account.init(UIManager);
-		MapManager.init(Player);
+		MapManager.init(Player, Enemy);
 		gameloop();
 	}
 
@@ -74,6 +77,7 @@ function (
 		LoaderManager.update();
 		MapManager.update();
 		Player.update();
+		Enemy.update();
 		BoxManager.update();
 	}
 

@@ -125,6 +125,14 @@ function (
 				name: "playerMove",
 				path: this.baseFolder + "sprite/game/playerMove.png"
 			},
+            {
+                name: "enemy",
+                path: this.baseFolder + "sprite/game/enemy.png"
+            },
+            {
+                name: "enemyMove",
+                path: this.baseFolder + "sprite/game/enemyMove.png"
+            },
 
 			// Image des boutons & differents background
 			{
