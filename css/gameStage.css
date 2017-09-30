@@ -40,6 +40,15 @@
  * css du hud
  */
 
+#LevelTitle {
+    position: absolute;
+    text-align: center;
+    font-family: Fipps, sans-serif;
+    font-size: 2em;
+    left: 485px;
+    top: 10px;
+}
+
 #hudSpecialText {
     position: absolute;
     text-align: center;

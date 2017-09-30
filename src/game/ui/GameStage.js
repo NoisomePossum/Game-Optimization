@@ -35,6 +35,7 @@ function (
 		 * - Title
 		 * - Logos
 		 */
+        $("#GameStage").append("<div id='LevelTitle'></div>");
 		$("#GameStage").append("<div id='hudSpecialText'>" + txt.get("LABEL_HUD_CAPACITE_TITLE") + "</div>");
 
 		var unconsumedSpecial = 3;

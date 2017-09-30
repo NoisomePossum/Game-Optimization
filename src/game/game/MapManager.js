@@ -205,6 +205,7 @@ function (
 		Config.mapSizeY = Math.sqrt(map.layers[0].data.length);
 
 		$("#gameContainer").append("<div id='mapContainer'></div>")
+        $("#LevelTitle").text("Level " + this.levelNum);
 
 		this.levelPar = map.properties.par;
 		$("#hudParNumberText").text(this.levelPar);
