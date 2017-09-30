@@ -3,6 +3,7 @@
  */
 define([
 	"src/utils/Config",
+    "src/game/ui/EndGameScreen",
 	"src/game/ui/GameStage",
 	"src/game/ui/LoadScreen",
 	"src/game/ui/Login",
@@ -19,6 +20,7 @@ define([
 ],
 function (
 	Config,
+    EndGameScreen,
 	GameStage,
 	LoadScreen,
 	Login,

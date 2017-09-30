@@ -75,7 +75,7 @@ function (
 		GamePad.update();
 		AnimationManager.update();
 		LoaderManager.update();
-		MapManager.update();
+		MapManager.update(UIManager);
 		Player.update();
 		Enemy.update();
 		BoxManager.update();

@@ -119,7 +119,7 @@ function (
 		Undoredo.add(MapManager);
 	}
 
-	MapManager.prototype.update = function () {
+	MapManager.prototype.update = function (UIManager) {
 		$("#hudTimeText").text(Math.floor((Date.now() - this.levelStartDate) / 1000) + " s");
 		for (var i = 0; i < 3; i++) {
 			if (this.Player.eatPower > i) {
@@ -151,11 +151,12 @@ function (
 				score = this.actionCount > this.levelPar ? 1 : 2;
 				Account.addScore(this.levelNum, score);
 				
-				//alert("Bravo, tu as gagné.\nTon nombre d'action :" + this.actionCount + "\nLe par du niveau :" + this.levelPar + "\nTon score : " + score + "\nDev tip: Message temporaire");
 				if (this.levelNum + 1 == 19) {
-                    //	TODO: add a popup window like the ones for login confirmation
-					// alert("Bravo, tu as fini le jeu");
-					
+                    //	TODO: stop window from endlessly looping
+                    UIManager.closeScreen("GameStage", false);
+                    this.removeMap();
+                    UIManager.addScreen("Menu", false);
+                    UIManager.addScreen("EndGameScreen", true);
 				} else {
 					this.removeMap('level' + (this.levelNum + 1));
 				}
