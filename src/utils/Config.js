@@ -33,7 +33,7 @@ function (
 		/**
 		 * Screen configuration
 		 */
-		this.fullScreen = false;
+		this.fullScreen = true;
 		this.ratio = 16 / 9;
 		this.WINDOW_WIDTH = 1136; // If fullScreen = false
 		this.WINDOW_HEIGHT = 640; // *
@@ -43,8 +43,8 @@ function (
 		/*
 		 * Debug tools
 		 */
-		this.debug = true; // Activates/Deactivates the console log
-		this.guiDebug = true; // Activates/Deactivates the debug gui
+		this.debug = false; // Activates/Deactivates the console log
+		this.guiDebug = false; // Activates/Deactivates the debug gui
 		this.fps = false; // Activates/Deactivates the fps counter
 		this.ms = false; // Activates/Deactivates the ms per frame counter
 		this.showHitbox = false; // Activates/Deactivates hitbox display
