@@ -35,33 +35,34 @@ function (
 
 		$("#screenContainer #LevelSelect").css("background-image", "url(" + SpriteManager.get("popUp").src + ")")
 									  .css("width", 786.8)
-									  .css("height", 444,5)
+									  .css("height", 544,5)
 									  .css( "left", "170" )
-									  .css( "top", "160" );
+									  .css( "top", "70" );
 
-		$("#LevelSelect").append("<div class='buttonClose'>" + txt.get("LABEL_POPUP_CLOSEBTN") + "</div>");
-		$("#LevelSelect .buttonClose").css("background-image", "url(" + SpriteManager.get("buttonLoginStatic").src + ")");
+        $("#LevelSelect").append("<div id='btnContainer'></div>");
+		$("#LevelSelect").append("<div class='buttonCloseLvl'>" + txt.get("LABEL_POPUP_CLOSEBTN") + "</div>");
+		$("#LevelSelect .buttonCloseLvl").css("background-image", "url(" + SpriteManager.get("buttonLoginStatic").src + ")");
 
 		/**
 		 * Bouton de fermeture du popUp
 		 */
 		// Hover
-		$( "#LevelSelect .buttonClose").hover(function() {
+		$( "#LevelSelect .buttonCloseLvl").hover(function() {
 			$( this ).css("background-image", "url(" + SpriteManager.get("buttonLoginSurvol").src + ")");
-			$("#LevelSelect .buttonClose").css("background-repeat", "no-repeat");
+			$("#LevelSelect .buttonCloseLvl").css("background-repeat", "no-repeat");
 			SoundManager.play("buttonHover");
 		}, function() {
 			$( this ).css("background-image", "url(" + SpriteManager.get("buttonLoginStatic").src + ")");
 		});
 
 		// Active
-		$( "#LevelSelect .buttonClose").mousedown(function() {
-			$("#LevelSelect .buttonClose").css("background-image", "url(" + SpriteManager.get("buttonLoginPress").src + ")")
+		$( "#LevelSelect .buttonCloseLvl").mousedown(function() {
+			$("#LevelSelect .buttonCloseLvl").css("background-image", "url(" + SpriteManager.get("buttonLoginPress").src + ")")
 										  .css("padding-top", 12);
 		});
 
-		$("#LevelSelect .buttonClose").mouseup(function() {
-			$("#LevelSelect .buttonClose").css("background-image", "url(" + SpriteManager.get("buttonLoginStatic").src + ")")
+		$("#LevelSelect .buttonCloseLvl").mouseup(function() {
+			$("#LevelSelect .buttonCloseLvl").css("background-image", "url(" + SpriteManager.get("buttonLoginStatic").src + ")")
 										  .css("padding-top", 8);
 			$("#blackScreen").hide();
 			SoundManager.play("meow14");
@@ -102,9 +103,9 @@ function (
 
 			// Button append
 			if (isUnlocked){
-				$("#LevelSelect").append("<div id='btnLevel" + i + "' class='btn " + className + "'><span>" + i + "</span></div>");
+				$("#btnContainer").append("<div id='btnLevel" + i + "' class='btn " + className + "'><span>" + i + "</span></div>");
 			} else {
-				$("#LevelSelect").append("<div id='btnLevel" + i + "' class='btn " + className + "'></div>");
+				$("#btnContainer").append("<div id='btnLevel" + i + "' class='btn " + className + "'></div>");
 			}
 
 			$("#btnLevel" + i).hide();

@@ -33,7 +33,7 @@ function (
 		/**
 		 * Screen configuration
 		 */
-		this.fullScreen = true;
+		this.fullScreen = false;
 		this.ratio = 16 / 9;
 		this.WINDOW_WIDTH = 1136; // If fullScreen = false
 		this.WINDOW_HEIGHT = 640; // *
