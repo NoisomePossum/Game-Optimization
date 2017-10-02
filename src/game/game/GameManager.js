@@ -14,10 +14,10 @@ define([
 	"src/game/controller/Keyboard",
 	"src/game/controller/GamePad",
 	"src/game/game/Player",
-	"src/game/game/Enemy",
 	"src/game/ui/UIManager",
 	"src/game/game/MapManager",
 	"src/game/game/box/BoxManager",
+	"src/game/game/enemy/EnemyManager",
 	"src/game/game/Pathfinding",
 	"src/game/server/Account"
 ],
@@ -34,10 +34,10 @@ function (
 	Keyboard,
 	GamePad,
 	Player,
-    Enemy,
 	UIManager,
 	MapManager,
 	BoxManager,
+	EnemyManager,
 	Pathfinding,
 	Account
 ) {
@@ -61,9 +61,8 @@ function (
 		Time.init();
 		UIManager.addScreen("LoadScreen");
 		Player.init();
-		Enemy.init();
 		Account.init(UIManager);
-		MapManager.init(Player, Enemy);
+		MapManager.init(Player);
 		gameloop();
 	}
 
@@ -77,8 +76,8 @@ function (
 		LoaderManager.update();
 		MapManager.update(UIManager);
 		Player.update();
-		Enemy.update();
 		BoxManager.update();
+		EnemyManager.update();
 	}
 
 

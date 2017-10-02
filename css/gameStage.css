@@ -15,7 +15,7 @@
 	z-index: 3;
 }
 
-#enemy {
+.enemy {
 	position: absolute;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;

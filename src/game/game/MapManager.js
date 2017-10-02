@@ -12,6 +12,8 @@ define([
 	"src/game/game/component/Undoredo",
 	"src/game/game/box/Box",
 	"src/game/game/box/BoxManager",
+	"src/game/game/enemy/Enemy",
+	"src/game/game/enemy/EnemyManager",
 	"src/utils/localization/txt",
 	"assets/map/level1",
 	"assets/map/level2",
@@ -43,6 +45,8 @@ function (
 	Undoredo,
 	Box,
 	BoxManager,
+    Enemy,
+    EnemyManager,
 	txt,
 	level1,
 	level2,
@@ -113,9 +117,8 @@ function (
 	}
 
 
-	MapManager.prototype.init = function (Player, Enemy) {
+	MapManager.prototype.init = function (Player) {
 		this.Player = Player;
-        this.Enemy = Enemy;
 		Undoredo.add(MapManager);
 	}
 
@@ -152,7 +155,6 @@ function (
 				Account.addScore(this.levelNum, score);
 				
 				if (this.levelNum + 1 == 19) {
-                    //	TODO: stop window from endlessly looping
                     UIManager.closeScreen("GameStage", false);
                     this.removeMap();
                     UIManager.addScreen("Menu", false);
@@ -211,7 +213,6 @@ function (
 		this.levelPar = map.properties.par;
 		$("#hudParNumberText").text(this.levelPar);
 		this.Player.eatPower = map.properties.eatPower || 0;
-        // this.Enemy.eatPower = 1;
 		
 		for (var i = 0; i < map.layers[0].data.length; i++) {
 
@@ -256,9 +257,11 @@ function (
 					break;
                 case this.cell.enemy:
                     imageName = floorImageName;
+					new Enemy((i % Config.mapSizeX), Math.floor(i / Config.mapSizeY), false, this, this.Player);
                     break;
                 case this.cell.enemyOnGoal:
                     imageName = "goal";
+					new Enemy((i % Config.mapSizeX), Math.floor(i / Config.mapSizeY), true, this, this.Player);
                     break;
 			}
 			
@@ -266,14 +269,6 @@ function (
 				map.layers[0].data[i] == this.cell.player) {
 				$("#mapContainer").append("<div id='player'></div>")
 					$("#player").css("background-image", "url(" + SpriteManager.get("player").src + ")")
-								.css("width", 141 * Math.max(Config.mapWidth, Config.mapHeight) / 110)
-								.css("height", 87 * Math.max(Config.mapWidth, Config.mapHeight) / 110);
-			}
-
-			if (map.layers[0].data[i] == this.cell.enemyOnGoal ||
-				map.layers[0].data[i] == this.cell.enemy) {
-				$("#mapContainer").append("<div id='enemy'></div>")
-					$("#enemy").css("background-image", "url(" + SpriteManager.get("enemy").src + ")")
 								.css("width", 141 * Math.max(Config.mapWidth, Config.mapHeight) / 110)
 								.css("height", 87 * Math.max(Config.mapWidth, Config.mapHeight) / 110);
 			}
@@ -343,6 +338,7 @@ function (
 		var mapLength = this.currentMap.length;
 		this.currentMap = [];
 		BoxManager.destroyAll();
+        EnemyManager.destroyAll();
 
 		for (var i = 0; i < mapLength; i++) {
 			setTimeout((function (id) {

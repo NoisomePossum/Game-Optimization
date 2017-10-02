@@ -10,6 +10,7 @@ define([
 	"src/utils/math/Vector2",
 	"src/game/game/MapManager",
 	"src/game/game/box/BoxManager",
+    "src/game/game/enemy/EnemyManager",
 	"src/game/controller/Controller",
 	"src/game/game/Pathfinding",
 	"src/game/game/component/Move"
@@ -23,6 +24,7 @@ function (
 	Vector2,
 	MapManager,
 	BoxManager,
+    EnemyManager,
 	Controller,
 	Pathfinding,
 	Move
