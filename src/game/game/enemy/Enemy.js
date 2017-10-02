@@ -4,6 +4,8 @@
 define([
 	"jquery",
 	"src/game/game/enemy/EnemyManager",
+    "src/game/game/box/BoxManager",
+    "src/game/game/MapManager",
 	"src/utils/assetsmanager/SpriteManager",
 	"src/utils/math/Vector2",
 	"src/utils/Config",
@@ -12,6 +14,8 @@ define([
 function (
 	$,
 	EnemyManager,
+    BoxManager,
+    MapManager,
 	SpriteManager,
 	Vector2,
 	Config,
@@ -116,6 +120,39 @@ function (
 			var currentCellValue = this.MapManager.getCellValue(this.position.x, this.position.y);
 			var nextCellId = this.MapManager.getCellId(this.position.x + xOffset, this.position.y + yOffset);
 			var nextCellValue = this.MapManager.getCellValue(this.position.x + xOffset, this.position.y + yOffset);
+
+            // Si la nextCell est une box
+            if (nextCellValue == this.MapManager.cell.box ||
+                nextCellValue == this.MapManager.cell.boxOnGoal) {
+
+                var box = BoxManager.getByXY(this.position.x + xOffset, this.position.y + yOffset);
+                var boxDir = dir;
+
+                switch(boxDir){
+                    case "right":
+                        boxDir = "left";
+                        break;
+                    case "left":
+                        boxDir = "right";
+                        break;
+                    case "down":
+                        boxDir = "up";
+                        break;
+                    case "up":
+                        boxDir = "down";
+                        break;
+                    default:
+                        console.error("Mauvaise direction ! Accepté : left, right, up, down. Entré : " + dir)
+                        break;
+                }
+
+                var boxCanMove = box.move(boxDir);
+                if (boxCanMove) {
+                    nextCellValue = this.MapManager.getCellValue(this.position.x + xOffset, this.position.y + yOffset);
+                } else {
+                    return false;
+                }
+            }
 
 			for (var i = 0; i < this.modifier.nextCell.length; i++) {
 				if (this.modifier.nextCell[i][0] == nextCellValue) {

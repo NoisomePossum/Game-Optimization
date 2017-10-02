@@ -198,25 +198,6 @@ function (
                     enemy.move(dir);
                 }
 
-				// if (nextCellValue == MapManager.cell.enemy ||
-				// 	nextCellValue == MapManager.cell.enemyOnGoal) {
-				// 	var enemy = EnemyManager.getByXY(this.position.x + xOffset, this.position.y + yOffset);
-				// 	var enemyCanMove = enemy.move(dir);
-				// 	if (enemyCanMove) {
-				// 		nextCellValue = MapManager.getCellValue(this.position.x + xOffset, this.position.y + yOffset);
-				// 		if (y) {
-				// 			MapManager.addAction({
-				// 				ref: enemy,
-				// 				type: "move",
-				// 				param: dir
-				// 			});
-				// 		}
-				// 	} else {
-				// 		MapManager.actionHistoryIndexDecrem();
-				// 		return false;
-				// 	}
-				// }
-
 				// Si la nextCell est une box
 				if (nextCellValue == MapManager.cell.box ||
 					nextCellValue == MapManager.cell.boxOnGoal) {
