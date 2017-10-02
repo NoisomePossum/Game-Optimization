@@ -94,16 +94,16 @@ function (
 			var yOffset = 0;
 
 			switch(dir){
-				case "left":
+				case "right":
 					xOffset = -1;
 					break;
-				case "right":
+				case "left":
 					xOffset = 1;
 					break;
-				case "up":
+				case "down":
 					yOffset = -1;
 					break;
-				case "down":
+				case "up":
 					yOffset = 1;
 					break;
 				default:
