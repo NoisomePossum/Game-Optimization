@@ -19,8 +19,8 @@ define([
  "orientation":"orthogonal",
  "properties":
     {
-     "eatPower":3,
-     "par":20
+     "eatPower":2,
+     "par":16
     },
  "propertytypes":
     {

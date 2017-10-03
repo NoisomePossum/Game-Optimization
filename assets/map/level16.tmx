@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="11" height="11" tilewidth="100" tileheight="100" nextobjectid="11">
  <properties>
-  <property name="eatPower" type="int" value="3"/>
+  <property name="eatPower" type="int" value="2"/>
   <property name="par" type="int" value="20"/>
  </properties>
  <tileset firstgid="1" source="newTileSet.tsx"/>
