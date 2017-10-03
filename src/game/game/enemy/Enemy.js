@@ -142,14 +142,20 @@ function (
                         boxDir = "down";
                         break;
                     default:
-                        console.error("Mauvaise direction ! Accepté : left, right, up, down. Entré : " + dir)
+                        console.error("Mauvaise direction ! Accepté : left, right, up, down. Entré : " + boxDir)
                         break;
                 }
 
                 var boxCanMove = box.move(boxDir);
                 if (boxCanMove) {
                     nextCellValue = this.MapManager.getCellValue(this.position.x + xOffset, this.position.y + yOffset);
+                    this.MapManager.addAction({
+                        ref: box,
+                        type: "move",
+                        param: boxDir
+                    });
                 } else {
+                    this.MapManager.actionHistoryIndexDecrem();
                     return false;
                 }
             }
