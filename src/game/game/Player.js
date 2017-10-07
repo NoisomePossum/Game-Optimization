@@ -192,11 +192,6 @@ function (
 				var nextCellId = MapManager.getCellId(this.position.x + xOffset, this.position.y + yOffset);
 				var nextCellValue = MapManager.getCellValue(this.position.x + xOffset, this.position.y + yOffset);
                 
-                // Move all enemies on the stage
-                for (i = 0; i < EnemyManager.list.length; i++) {
-                    var enemy = EnemyManager.list[i];
-                    enemy.move(dir);
-                }
 
 				// Si la nextCell est une box
 				if (nextCellValue == MapManager.cell.box ||
@@ -256,6 +251,19 @@ function (
 				this.position.y += yOffset;
 				this.translateOffset.x = xOffset * Config.mapWidth * -1;
 				this.translateOffset.y = yOffset * Config.mapHeight * -1;
+
+                // Move all enemies on the stage
+                for (i = 0; i < EnemyManager.list.length; i++) {
+                    var enemy = EnemyManager.list[i];
+                    enemy.move(dir);
+                    if (y) {
+                        MapManager.addAction({
+                            ref: enemy,
+                            type: "move",
+                            param: dir
+                        });
+                    }
+                }
 
 				// SoundManager.play("meow" + Math.floor(Math.random() * 15));
 				SoundManager.play("playerMove");
