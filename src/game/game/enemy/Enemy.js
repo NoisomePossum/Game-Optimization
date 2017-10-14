@@ -46,7 +46,6 @@ function (
 		this.yOffset = 0;
 
 		this.idleSprite = SpriteManager.get("enemy").src;
-		// if (isOnGoal) this.idleSprite = SpriteManager.get("enemy").src;;
 
 		this.appendEnemy();
 	}
@@ -176,7 +175,6 @@ function (
 			};
 
 			this.idleSprite = SpriteManager.get("enemy").src;
-			// if (nextCellValue == this.MapManager.cell.goal) this.idleSprite = SpriteManager.get("enemy").src;
 			$("#enemy" + this.id).css("background-image", "url(" + this.idleSprite + ")")
 			
 			this.position.x += xOffset;
@@ -184,7 +182,6 @@ function (
 			this.translateOffset.x = xOffset * Config.mapWidth * -1;
 			this.translateOffset.y = yOffset * Config.mapHeight * -1;
 
-			//SoundManager.play("meow" + Math.floor(Math.random() * 15))
 
 			return true;
 		}
